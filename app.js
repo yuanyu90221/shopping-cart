@@ -6,6 +6,9 @@ var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 var expressHbs = require('express-handlebars');
 var routes = require('./routes/index');
+var mongoose = require('mongoose');
+//set up for mongodb
+mongoose.connect('localhost:27017/shopping');
 
 var app = express();
 app.engine('.hbs', expressHbs({defaultLayout:'layout', extname: '.hbs'}));
